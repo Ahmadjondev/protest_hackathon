@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "680293155109",
+    "project_id": "protestuz",
+    "storage_bucket": "protestuz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680293155109:android:474b4f05a7aac8027ddacc",
+        "android_client_info": {
+          "package_name": "uz.linesoft.protest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDh_bFhIWPRFNK1XRItPXNEBhBp_8fQlx0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

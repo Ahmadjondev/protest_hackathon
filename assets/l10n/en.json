@@ -1,0 +1,21 @@
+{
+    "choose_lang": "Choose your\nLanguage",
+    "choose_one_lang": "Choose one of the current languages",
+    "continue": "Continue",
+    "welcome_back": "Welcome back!",
+    "wellcome_2": "We are glad to\nsee you 😊",
+    "sign_up": "Sign Up",
+    "login": "Login",
+    "mobile_number": "Mobile number",
+    "or": " or ",
+    "email": "email",
+    "username": "username",
+    "password": "Password",
+    "forgot_password": "Forgot password?",
+    "dont_have_acc": "Don`t have an account?  ",
+    "google":"Continue with Google",
+    "weve_send_code":"We've send an sms with an activation code to your phone",
+    "resend":"resend",
+    "cont":"Skip",
+    "pass_error": "password is incorrect or is not empty "
+}
