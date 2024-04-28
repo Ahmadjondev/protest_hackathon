@@ -71,11 +71,17 @@ class _Icons extends _AssetsHolder {
   String get splashIcon => '$basePath/splash_icon.svg';
 
   String get wellcome => '$basePath/wellcome.svg';
+
   String get actBookmark => '$basePath/act_bookmark.svg';
+
   String get bookmark => '$basePath/bookmark.svg';
+
   String get telegram => '$basePath/telegram.svg';
+
   String get instagram => '$basePath/instagram.png';
+
   String get notification => '$basePath/notification.svg';
+
   String get search => '$basePath/search.svg';
 }
 
@@ -105,9 +111,14 @@ class _Images extends _AssetsHolder {
       '$basePath/avatars/Type=Edit Avatar, Component=Avatar-5.png';
 
   String get avatar8 => '$basePath/avatars/avata8.png';
+
   String get contest1 => '$basePath/contest1.png';
+
   String get univ => '$basePath/univ.png';
+
   String get banner => '$basePath/banner.png';
+
+  String get matem => '$basePath/matematika.jpeg';
 }
 
 // class _Audios extends _AssetsHolder {

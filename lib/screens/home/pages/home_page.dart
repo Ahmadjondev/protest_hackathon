@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:protest/common/anim_navigator.dart';
 import 'package:protest/common/app_color.dart';
 import 'package:protest/common/app_text_style.dart';
 import 'package:protest/common/assets.dart';
@@ -11,6 +12,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:protest/common/custom_textfield.dart';
 import 'package:protest/common/local_data.dart';
 import 'package:protest/models/user_model.dart';
+import 'package:protest/screens/home/contest_screen.dart';
 import 'package:protest/screens/home/cubit/data_cubit.dart';
 
 class HomePage extends StatefulWidget {
@@ -205,63 +207,68 @@ class _HomePageState extends State<HomePage> {
                         itemCount: contests.length,
                         itemBuilder: (_, index) {
                           var item = contest[index];
-                          return Container(
-                            padding: EdgeInsets.all(20.w),
-                            decoration: BoxDecoration(
-                                color: AppColors.white,
-                                borderRadius: BorderRadius.circular(32.r),
-                                boxShadow: [
-                                  BoxShadow(
-                                      blurRadius: 60,
-                                      color: AppColors.black.withOpacity(0.05))
-                                ]),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 84.w,
-                                  height: 84.w,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20.r),
-                                      color: AppColors.prymary,
-                                      image: DecorationImage(
-                                          image: AssetImage(item.image))),
-                                ),
-                                SizedBox(width: 16.w),
-                                Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      padding: EdgeInsets.symmetric(
-                                          vertical: 5.h, horizontal: 10.w),
-                                      decoration: BoxDecoration(
-                                          color: AppColors.prymary
-                                              .withOpacity(.85),
-                                          borderRadius:
-                                              BorderRadius.circular(6.r)),
-                                      child: Text(
-                                        item.science,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: AppTextStyles.body10w6.copyWith(
-                                          color: AppColors.white,
+                          return InkWell(
+                            onTap: () {
+                              AnimNavigator.push(context, ContestScreen());
+                            },
+                            child: Container(
+                              padding: EdgeInsets.all(20.w),
+                              decoration: BoxDecoration(
+                                  color: AppColors.white,
+                                  borderRadius: BorderRadius.circular(32.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        blurRadius: 60,
+                                        color: AppColors.black.withOpacity(0.05))
+                                  ]),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    width: 84.w,
+                                    height: 84.w,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20.r),
+                                        color: AppColors.prymary,
+                                        image: DecorationImage(
+                                            image: AssetImage(item.image))),
+                                  ),
+                                  SizedBox(width: 16.w),
+                                  Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                            vertical: 5.h, horizontal: 10.w),
+                                        decoration: BoxDecoration(
+                                            color: AppColors.prymary
+                                                .withOpacity(.85),
+                                            borderRadius:
+                                                BorderRadius.circular(6.r)),
+                                        child: Text(
+                                          item.science,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: AppTextStyles.body10w6.copyWith(
+                                            color: AppColors.white,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      width: size.width * .5,
-                                      child: Text(item.title,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: AppTextStyles.body18w7),
-                                    ),
-                                    Text('${item.candidates} ishtirokchi',
-                                        style: AppTextStyles.body12w5)
-                                  ],
-                                ),
-                                const Spacer(),
-                                SvgPicture.asset(Assets.icons.actBookmark)
-                              ],
+                                      SizedBox(
+                                        width: size.width * .5,
+                                        child: Text(item.title,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: AppTextStyles.body18w7),
+                                      ),
+                                      Text('${item.candidates} ishtirokchi',
+                                          style: AppTextStyles.body12w5)
+                                    ],
+                                  ),
+                                  const Spacer(),
+                                  SvgPicture.asset(Assets.icons.actBookmark)
+                                ],
+                              ),
                             ),
                           );
                         },
